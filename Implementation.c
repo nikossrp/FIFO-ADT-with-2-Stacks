@@ -28,7 +28,7 @@ int Full(Queue* Q)  //full otan gemisei to heap
     return 0;
 } 
 
-void Pop2(Stack2* S, ItemType* X)
+void Pop(Stack2* S, ItemType* X)
 {
     StackNode* Temp;
 
@@ -41,7 +41,7 @@ void Pop2(Stack2* S, ItemType* X)
     }
 }
 
-void Push1(Stack1* S, ItemType X)
+void Push(Stack1* S, ItemType X)
 {
     StackNode* Temp;
     Temp = (StackNode* )malloc(sizeof(StackNode));
