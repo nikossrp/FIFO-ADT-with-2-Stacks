@@ -5,12 +5,10 @@ typedef struct StackNodeTag{
 
 }StackNode;
 
-//1h stoiva
 typedef struct{     
    StackNode* ItemList1; 
 }Stack1;
 
-//2h stoiva
 typedef struct{     
    StackNode* ItemList2; 
 }Stack2;
