@@ -20,7 +20,7 @@ int Empty2(Stack2* S)
 
 int Empty(Queue* Q)
 {
-    return (Empty1(&(Q->Input)) && Empty2(&(Q->Output)));    //einai adia mono otan einai kai oi dyo stoives adies
+    return (Empty1(&(Q->Input)) && Empty2(&(Q->Output)));   
 }
 
 int Full(Queue* Q)  //full otan gemisei to heap
@@ -32,7 +32,7 @@ void Pop(Stack2* S, ItemType* X)
 {
     StackNode* Temp;
 
-    if(S->ItemList2 == NULL) printf("H stoiva einai kenh den uparxei stoixeio na bgaleis");
+    if(S->ItemList2 == NULL) printf("Stack is empty\n");
     else{
         Temp =S->ItemList2;
         *X = Temp->Item;
@@ -46,7 +46,7 @@ void Push(Stack1* S, ItemType X)
     StackNode* Temp;
     Temp = (StackNode* )malloc(sizeof(StackNode));
 
-    if(Temp == NULL) printf("Den exoume xwro");
+    if(Temp == NULL) printf("No space available");
     else{
         Temp->Link = S->ItemList1;
         Temp->Item = X;
@@ -56,22 +56,20 @@ void Push(Stack1* S, ItemType X)
 
 void Insert(ItemType R, Queue* Q)
 {
-//  printf("Insert the item %d\n", R);
-    Push(&(Q->Input), R);    //ta bazw sthn prwth stoiva
+    Push(&(Q->Input), R);    //push in the first stack
 }
 
-void reverse(Stack1* S, Stack2* X)    //apo thn prwth stoiva sthn defterh
+void reverse(Stack1* S, Stack2* X)    //from first stack to second
 {
-//  printf("Put item %d in stoiva2\n", S->ItemList1->Item);
     StackNode* Temp;   
-    Temp = S->ItemList1->Link;  //bazw ton prosorino deikth na deixnh sto 2o stoixeio ths stoivas
+    Temp = S->ItemList1->Link;  
     S->ItemList1->Link = X->ItemList2;   
     X->ItemList2 = S->ItemList1;
      S->ItemList1 = Temp;
 }
 
-//gia na bgalw ta stoixeia apo thn mia stoiva kai na ta balw stin allh stoiva me thn antistrofh seira
-//wste na ta bgalw anapoda diladh na exw domh FIFO opws sthn oura:
+// take the items out of one stack and put them in the other one
+// structure will be FIFO like queue
 void enqueue(Stack1* In, Stack2* Out )  
 {   
     if(Empty2(Out)) 
