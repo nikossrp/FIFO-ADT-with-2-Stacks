@@ -6,6 +6,6 @@ void Insert(ItemType , Queue* );
 void Remove(Queue* , ItemType* );   
 int Empty1(Stack1* );           
 int Empty2(Stack2* );
-void Push(Stack1* , ItemType );    //push gia thn prwti stoiva
-void enqueue(Stack1* , Stack2*  );    //gia thn anastrofh apo thn 1 -> 2 wste na einai mia domh FIFO
-void Pop(Stack2* , ItemType* );    //pop gia thn 2h stoiva
+void Push(Stack1* , ItemType );    //push for the first stack
+void enqueue(Stack1* , Stack2*  );    //for the reverse from stack1 to stack2
+void Pop(Stack2* , ItemType* );    //pop for the second stack
